@@ -5,6 +5,7 @@
 
 #### 2. Результат команды explain, в которой используется предыдущий индекс.
 <image src="https://github.com/ArinichElena/create_index/blob/main/план.png">
+  
 ```xml
 [
 {
