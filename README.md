@@ -1,5 +1,5 @@
 # Индексы
-#### 1. Создать индекс к какой-либо из таблиц вашей БД
+#### 1. Индекс к таблице БД
 > Простой индекс по полю code_diag, для таблицы reception_doctor, чтобы группировать/отбирать данные по коду диагноза.  
 <image src="https://github.com/ArinichElena/create_index/blob/main/простой.png">
 
@@ -55,3 +55,22 @@
 }
 ]
 ```
+ 
+#### 3. Индекс для полнотекстового поиска
+> Индекс для поля с комментариями врача с таблице reception_doctor (факт состоявшегося приема у врача),т.к. в нем могут быть разные заключения и индекс облегчит поиск, если нужно будет найти комментарии с одинаковыми атрибутами.
+<image src="https://github.com/ArinichElena/create_index/blob/main/полнотекстовый1.png">
+<image src="https://github.com/ArinichElena/create_index/blob/main/полнотекстовый2.png">
+<image src="https://github.com/ArinichElena/create_index/blob/main/полнотекстовый3.png">
+<image src="https://github.com/ArinichElena/create_index/blob/main/полнотекстовый4.png">
+<image src="https://github.com/ArinichElena/create_index/blob/main/полнотекстовый5.png">
+<image src="https://github.com/ArinichElena/create_index/blob/main/полнотекстовый6.png">
+  
+#### 4. Индекс на часть таблицы.
+> Индекс на идентификатор факта направления к врачу в таблице record_doctor (факт записи к врачу), которые заполнены, т.к. это поле может быть пустым.
+<image src="https://github.com/ArinichElena/create_index/blob/main/частичный.png">
+  
+#### 5. Индекс на несколько полей.
+> Индекс для таблицы patient (пациенты) по трем полям: фамилия, имя, отчетсво. Он облегчит поиск человека по его молному ФИО.
+<image src="https://github.com/ArinichElena/create_index/blob/main/составной.png">
+  
+> P.s. Анализировала БД, где нужно добавить индексы путоем предположения, какие запросы могут поступать и какие выборки будут наиболее популярны. Трудности были в полимании GiST, SP-GiST, GIN, BRIN индексов, т.к. с ними не сталкивалась и пришлось почитать побольше доп. литературы, чтобы подробнее разобраться. 
